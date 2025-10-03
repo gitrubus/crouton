@@ -32,11 +32,11 @@ fi
 # Check the releases directory and update, or create it if necessary
 if [ -d releases/.git ]; then
     if ! grep -q 'releases$' releases/.git/HEAD; then
-        error 1 'releases/ is not in the releases branch.'
+        error 1 'releases/ is not in the releases branch. try again maybe?'
     fi
     if ! awk "/'releases'/{print \$1}" releases/.git/FETCH_HEAD | \
             diff -q releases/.git/refs/heads/releases - >/dev/null; then
-        echo 'releases/ is ahead of or not up-to-date with remote' 1>&2
+        echo 'releases/ is ahead of or not up-to-date with remote. i guess mirroring it should work or maybe just report the issue. i kinda suck at this so you can tell me about it.' 1>&2
         if [ -z "$FORCE" ]; then
             exit 1
         fi
@@ -44,7 +44,7 @@ if [ -d releases/.git ]; then
     git -C releases fetch origin releases
     git -C releases reset --hard origin/releases
 elif [ -e releases ]; then
-    error 1 "releases/ is not a git repo"
+    error 1 "releases/ is not a git repo. i have no idea what your trying to do gng."
 else
     url="`git remote -v | awk '$1=="origin" && $3=="(fetch)" {print $2}'`"
     git clone --single-branch --branch releases --reference . "$url" releases
@@ -54,11 +54,11 @@ fi
 for bundle in "$@"; do
     bundle="${bundle##*/}"
     if [ ! -f "$bundle" ]; then
-        error 1 "$bundle bundle does not exist"
+        error 1 "$bundle bundle does not exist. your looking for a bundle that doesn't even exist. not my problem thats just not my problem."
     fi
     version="`sh "$bundle" -V`"
     if [ "$version" = "${version#crouton*:}" ]; then
-        error 1 "$bundle bundle is invalid"
+        error 1 "$bundle bundle is invalid. im too stupid to figure this out can you help me?"
     fi
     branch="${version#*~}"
     branch="${branch%:*}"
@@ -67,7 +67,7 @@ for bundle in "$@"; do
     # Compare the current release to avoid duplicates
     if [ -f "releases/$dest" ] && \
             sh "releases/$dest" -V | grep -q "${version#*~}"; then
-        echo "Release already current: `sh "$bundle" -V`"
+        echo "useless kinda here just look at this: `sh "$bundle" -V`"
         continue
     fi
     # Copy it in and make a commit
