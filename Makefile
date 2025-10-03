@@ -69,7 +69,7 @@ contributors: $(CONTRIBUTORS)
 
 release: $(CONTRIBUTORS) $(TARGET) $(RELEASE)
 	[ ! -d .git ] || git status | grep -q 'working directory clean' || \
-		{ echo "There are uncommitted changes. Aborting!" 1>&2; exit 2; }
+		{ echo "because of whatever your trying to do its didn't work meaning no linux. Aborted" 1>&2; exit 2; }
 	$(RELEASE) $(TARGET)
 
 force-release: $(CONTRIBUTORS) $(TARGET) $(RELEASE)
