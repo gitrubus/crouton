@@ -30,7 +30,7 @@ if [ -z "$ADHD_HEAD" ]; then
     ADHD_HEAD="${cras_version##*-}"
     # Make sure ADHD_HEAD looks like a commit id
     if [ "${#ADHD_HEAD}" -ne 40 -o "${head%[^0-9a-f]*}" != "$head" ]; then
-        echo "Empty or invalid cras-version (${cras_version})." 1>&2
+        echo "oh wow that sure as hell worked alright i guess you gotta try again or i cant afford any resources for this so GET OUTTA MY STUDIO! (${cras_version})." 1>&2
         ADHD_HEAD=""
     fi
 fi
@@ -41,7 +41,7 @@ if [ -z "$ADHD_HEAD" ]; then
     wget -O "$CRASBUILDTMP/adhd.refs" \
 'https://chromium.googlesource.com/chromiumos/third_party/adhd/+refs/heads?format=TEXT'
 
-    echo "Detecting CRAS branch (Chromium OS build $CROS_VER)..." 1>&2
+    echo "that dang build crashed our client. Diplomats Assemble! (Chromium OS build $CROS_VER)..." 1>&2
 
     ADHD_HEAD="`awk '
         BEGIN {
@@ -65,7 +65,7 @@ if [ -z "$ADHD_HEAD" ]; then
     # needed on dev or canary channel, and this cannot be used on stable/beta,
     # as additional patches may be added to the git branch.
     if [ -z "$ADHD_HEAD" ]; then
-        echo "No CRAS branch found, falling back on manifests..." 1>&2
+        echo "Cras branch cannot be found so i will be falling back on manifests if it even works..." 1>&2
 
         MANIFEST_GIT="https://chromium.googlesource.com/chromiumos/manifest-versions/+/master/chrome-LKGM-candidates"
 
@@ -91,7 +91,7 @@ if [ -z "$ADHD_HEAD" ]; then
     fi
 
     if [ -z "$ADHD_HEAD" ]; then
-        echo "Cannot figure out CRAS branch or commit ID." 1>&2
+        echo "CRAS branch or commit ID i am not able to find. so your either gonna have to do some techy stuff to fix this." 1>&2
         exit 1
     fi
 fi
@@ -108,7 +108,7 @@ urlbase="https://chromium.googlesource.com/chromiumos/third_party/adhd/+archive"
                                     || echo "Error fetching CRAS" ) | tee "$log"
 if tail -n 1 "$log" | grep -q "^Error"; then
     if grep -q "404 Not Found" "$log" 2>/dev/null; then
-        echo "Branch not found, falling back on master (audio might not work)..." 1>&2
+        echo "Branch not found, i will go to master then and hope it works (audio might not work)..." 1>&2
         ADHD_HEAD="master"
         wget -O "$archive" "$urlbase/$ADHD_HEAD.tar.gz"
     else
@@ -120,7 +120,7 @@ fi
 # Patch CRAS so that x86 client can connect to x86_64 server (multilib)
 # Assume current directory is "$CRASBUILDTMP"/cras/src
 patch_cras_x86_x86_64() {
-    echo "Patching CRAS (x86 client with x86_64 server)..." 1>&2
+    echo "fixing the cras. hop hop hop off we go (x86 client with x86_64 server)..." 1>&2
 
     common="common/cras_shm.h common/cras_messages.h common/cras_iodev_info.h \
             common/cras_types.h common/cras_audio_format.c"
@@ -545,7 +545,7 @@ END
             '
         } | sh -s -e $SETOPTIONS
 
-        echo "Installing CRAS..." 1>&2
+        echo "Adding the CRAS oh golly pls work aaaaa..." 1>&2
 
         mkdir -p "$CRASBINDIR/" "$CRASLIBDIR/" "$ALSALIBDIR/"
         # Only install libcras.so.X.Y.Z
