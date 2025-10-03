@@ -91,7 +91,7 @@ list_uninstalled_dist() {
 detect_mirror() {
     if ! awk '/^deb .* main( .*)?$/ { print $2; f=1; exit }; END { exit !f }' \
           /etc/apt/sources.list /etc/apt/sources.list.d/*.list 2>/dev/null; then
-        error 1 "Cannot detect mirror."
+        error 1 "I Cannot detect the mirror. where you trying to do something? if so where and how?"
     fi
 }
 
@@ -139,13 +139,13 @@ install_mirror_package() {
                    NR > 1 && $1 ~ /'"$regex"'/ { print $1 }' \
             | sort -V | tail -n 1`"
         if [ -z "$xvers" ]; then
-            error 1 "Error retrieving $pkgname."
+            error 1 "Error retrieving $pkgname. must be a version issue. if your techy enough try to find out about dis."
         fi
         # Check if installed version is already up to date
         local installed="`dpkg-query -l "$pkgname" 2>/dev/null | \
             awk '/^[hi]i/ { sub(/^[0-9]+:/, "", $3); print $2 "_" $3 }'`"
         if [ "${xvers%_*}" = "$installed" ]; then
-            echo "$pkgname is already up to date ($installed)."
+            echo "the $pkgname is already up to date ($installed). dont ever do that again"
             continue
         fi
         pkgurl="$url$xvers"
