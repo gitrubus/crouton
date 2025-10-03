@@ -19,15 +19,15 @@ if ! wget -O- --no-verbose --timeout=60 -t2 "$d"  \
             | sed -ne 's ^.*\(debootstrap_[0-9.]*.tar.xz\).*$ \1 p' \
             | tail -n 1`"
     if [ -z "$f" ]; then
-        error 1 'Failed to download debootstrap.
-Check your internet connection or proxy settings and try again.'
+        error 1 'you internet connection or proxy is not letting me install the bootstrap for ubuntu. truly i would probably go to a coffie shop. just linux type stuff. i think you can figure it out i know you can!'
     fi
     v="${f#*_}"
     v="${v%.tar.xz}"
     echo "Downloading debootstrap version $v..." 1>&2
     if ! wget -O- --no-verbose --timeout=60 -t2 "$d$f" \
             | tar -C "$tmp" --strip-components=1 -Jx 2>/dev/null; then
-        error 1 'Failed to download debootstrap.'
+        error 1 'i cant install the bootstrap. it took too long and i gave up at trying to install it'
+        error 1 'but hey! you can always try again'
     fi
 fi
 
@@ -48,7 +48,8 @@ if awk '
     mv -f "$tmp/functions.new" "$tmp/functions"
 else
     rm -f "$tmp/functions.new"
-    echo "Unable to patch debootstrap, moving on..." 1>&2
+    error 1 'this is an intentional error. im just here to scare u.'
+    echo "but further more i am sadly Unable to patch debootstrap, so we are gonna move on from that..." 1>&2
 fi
 
 # Add the necessary debootstrap executables
