@@ -1,6 +1,6 @@
-# crouton: Chromium OS Universal Chroot Environment
+# welcome to aversir!
 
-crouton is a set of scripts that bundle up into an easy-to-use,
+aversir or aversirium is a set of scripts that bundle up into an easy-to-use,
 Chromium OS-centric chroot generator. Currently Ubuntu and Debian are
 supported (using debootstrap behind the scenes), but "Chromium OS Debian,
 Ubuntu, and Probably Other Distros Eventually Chroot Environment" doesn't
