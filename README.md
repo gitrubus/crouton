@@ -6,7 +6,7 @@ supported (using debootstrap behind the scenes), but "Chromium OS Debian,
 Ubuntu, and Probably Other Distros Eventually Chroot Environment" doesn't
 acronymize as well (crodupodece is admittedly pretty fun to say, though).
 
-### THIS FORK OF CROUTON IS NOT TESTED YET EXPECT SOME STUFF TO NOT WORK!
+### AVERSIR IS NOT TESTED YET EXPECT SOME STUFF TO NOT WORK!
 
 
 ## But first...
@@ -14,7 +14,7 @@ acronymize as well (crodupodece is admittedly pretty fun to say, though).
 :warning: **Steps to install crouton have changed!**  :warning:
 
 Due to improved security within Chromium OS ([yay!](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/security/noexec_shell_scripts.md)),
-the steps needed to launch the crouton installer, and the steps to run crouton
+the steps needed to launch the aversirium installer, and the steps to run crouton
 from SD cards have to change a little.
 
 Please read the relevant sections of this README carefully, and reach out to
@@ -30,11 +30,9 @@ personal gratitude of the crouton authors\*!
 Ok, back to business.
 
 
-## "crouton"...an acronym?
+## what is aversirium?
 
-It stands for _ChRomium Os Universal chrooT envirONment_
-...or something like that. Do capitals really matter if caps-lock has been
-(mostly) banished, and the keycaps are all lower-case?
+its a fork of crouton. i have definitly and totally skidded this but i will try my best to make it stable as possible.
 
 Moving on...
 
