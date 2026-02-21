@@ -10,25 +10,7 @@ acronymize as well (crodupodece is admittedly pretty fun to say, though).
 
 ## update i am currently working on a way how to make aversir work on linux and possibly windows but it will take a lot of time.
 
-## But first...
-
-:warning: **Steps to install crouton have changed!**  :warning:
-
-Due to improved security within Chromium OS ([yay!](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/security/noexec_shell_scripts.md)),
-the steps needed to launch the aversirium installer, and the steps to run crouton
-from SD cards have to change a little.
-
-Please read the relevant sections of this README carefully, and reach out to
-your favorite weblogger/tutorialer/videotuber to update their guides if they're
-behind the times. If you're successful, brag about your accomplishments in [the
-issue tracker](https://github.com/dnschneid/crouton/issues/4026) and earn the
-personal gratitude of the crouton authors\*!
-
-<sup>\* limit one (1) gratitude per commenter</sup>
-
-*WHOA*
-
-Ok, back to business.
+## aversir will have some new distros evenually but idk when
 
 
 ## what is aversirium?
