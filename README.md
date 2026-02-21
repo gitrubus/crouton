@@ -47,51 +47,15 @@ to the rest of Chromium OS.
 ...but hey, you can run [TuxRacer](https://en.wikipedia.org/wiki/Tux_Racer)!
 
 
-### What about dem crostinis though?
+## does aversir have an extention like crouton did?
 
-[Crostini](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/containers_and_vms.md)
-is an official project within Chromium OS to bring the Linux shell and apps to
-the platform *in verified mode* with clean integration, multi-layered security,
-and all the polish you expect from Chromium OS proper.
+no aversir will not have an extention. you have to run it using your terminal.
 
-That means compared to crouton, Crostini has official support, competent
-engineers, and code that looks a little less like ramen.  crouton, in its
-defense, has wider device compatibility, enables direct hardware access, and is
-named after an objectively tastier bread-based food item.
-
-There's a solid community on [Reddit](https://www.reddit.com/r/Crostini/) if
-you'd like to try Crostini out.  If it works for you -- great!  No hard
-feelings.  If in the end you decide that crouton suits you better, read on!
-
-Note: you can't get the best of both worlds by installing crouton inside of
-Crostini.  The technology (and life itself) just doesn't work that way.  Not to
-mention a crouton Crostini would look ridiculous and be impossible to eat
-without getting bits everywhere.
-
-
-## Prerequisites
-
-You need a device running Chromium OS that has been switched to developer mode.
-
-For instructions on how to do that, go to [this Chromium OS wiki page](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices),
-click on your device model and follow the steps in the *Entering Developer Mode*
-section.
-
-Note that developer mode, in its default configuration, is *completely
-insecure*, so don't expect a password in your chroot to keep anyone from your
-data. crouton does support encrypting chroots, but the encryption is only as
-strong as the quality of your passphrase. Consider this your warning.
-
-It's also highly recommended that you install the [crouton extension](https://goo.gl/OVQOEt),
-which, when combined with the `extension` or `xiwi` targets, provides much 
-improved integration with Chromium OS.
-
-That's it! Surprised?
 
 
 ## Usage
 
-crouton is a powerful tool, and there are a *lot* of features, but basic usage
+aversir is a powerful tool, and there are a *lot* of features, but basic usage
 is as simple as possible by design.
 
 If you're just here to use crouton, you can grab the latest release from
@@ -126,11 +90,11 @@ start\* commands. Ta-da! That was easy.
 
 ### The easy way (assuming you want an Ubuntu LTS with Xfce)
 
-  1. Download `crouton`
+  1. Download `aversir`
   2. Open a shell (Ctrl+Alt+T, type `shell` and hit enter)
   3. Copy the installer to an executable location by running
-     `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/crouton`
-  4. Now that it's executable, run the installer itself: `sudo crouton -t xfce`
+     `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/aversir`
+  4. Now that it's executable, run the installer itself: `sudo aversir -t xfce`
   5. Wait patiently and answer the prompts like a good person.
   6. Done! You can jump straight to your Xfce session by running
      `sudo enter-chroot startxfce4` or, as a special shortcut, `sudo startxfce4`
@@ -140,7 +104,7 @@ start\* commands. Ta-da! That was easy.
 
 ### With encryption!
 
-  1. Add the `-e` parameter when you run crouton to create an encrypted chroot
+  1. Add the `-e` parameter when you run aversir to create an encrypted chroot
      or encrypt a non-encrypted chroot.
   2. You can get some extra protection on your chroot by storing the decryption
      key separately from the place the chroot is stored. Use the `-k` parameter
@@ -154,15 +118,6 @@ start\* commands. Ta-da! That was easy.
   2. Run `crouton -r list` to list the recognized releases and which distros
      they belong to.
 
-### Wasteful redundancies are wasteful: one clipboard, one browser, one window
-
-  1. Install the [crouton extension](https://goo.gl/OVQOEt) into Chromium OS.
-  2. Add the `extension` or `xiwi` version to your chroot.
-  3. Try some copy-pasta, or uninstall all your web browsers from the chroot.
-
-*Installing the extension and its target gives you synchronized clipboards, the
-option of using Chromium OS to handle URLs, and allows chroots to create
-graphical sessions as Chromium OS windows.*
 
 ### I don't always use Linux, but when I do, I use CLI
 
@@ -175,23 +130,14 @@ graphical sessions as Chromium OS windows.*
   4. If you installed cli-extra, `startcli` will launch a new VT right into the
      chroot.
 
-### A new version of crouton came out; my chroot is therefore obsolete and sad
+### A new version of aversir came out; my chroot is therefore obsolete and sad
 
   1. Exit the chroot if you have it open.
-  2. If you haven't already, download `crouton`, and copy it so it works:
-     `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/crouton`
-  3. Update your chroot with `sudo crouton -u -n chrootname`. It will update
+  2. If you haven't already, download `aversir`, and copy it so it works:
+     `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/aversir`
+  3. Update your chroot with `sudo aversir -u -n chrootname`. It will update
      all installed targets.
 
-### I want to open my desktop in a window or a tab but I don't have the 'xiwi' target/xmethod.
-
-  1. Add 'xiwi' or any other target to an existing chroot with the `-u` option:
-     `sudo crouton -t xiwi -u -n chrootname`
-
-  This will also make 'xiwi' the default xmethod.
-
-  2. If you want to keep the 'xorg' xmethod as the default then pick it first:
-     `sudo sh crouton -t xorg,xiwi -u -n chrootname`
 
 ### A backup a day keeps the price-gouging data restoration services away
 
@@ -233,16 +179,16 @@ Note that this will definitely break in the near future, so don't depend on it.*
 
 ### Downloading bootstrap files over and over again is a waste of time
 
-  1. Download `crouton`
+  1. Download `aversir`
   2. Open a shell (Ctrl+Alt+T, type `shell` and hit enter)
   3. Copy the installer to an executable location by running
-     `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/crouton`
+     `sudo install -Dt /usr/local/bin -m 755 ~/Downloads/aversir`
   4. Now that it's executable, use the installer to build a bootstrap tarball:
-     `sudo crouton -d -f ~/Downloads/mybootstrap.tar.bz2`
+     `sudo aversir -d -f ~/Downloads/mybootstrap.tar.bz2`
   5. Include the `-r` parameter if you want to specify for which release to
      prepare a bootstrap.
   6. You can then create chroots using the tarball by running
-     `sudo crouton -f ~/Downloads/mybootstrap.tar.bz2`. Make sure you also
+     `sudo aversir -f ~/Downloads/mybootstrap.tar.bz2`. Make sure you also
      specify the target environment with `-t`.
 
 *This is the quickest way to create multiple chroots at once, since you won't
