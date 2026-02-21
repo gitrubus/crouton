@@ -8,6 +8,7 @@ acronymize as well (crodupodece is admittedly pretty fun to say, though).
 
 ### AVERSIR IS NOT TESTED YET EXPECT SOME STUFF TO NOT WORK!
 
+## update i am currently working on a way how to make aversir work on linux and possibly windows but it will take a lot of time.
 
 ## But first...
 
