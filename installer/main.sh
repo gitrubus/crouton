@@ -27,7 +27,7 @@ MIRROR2=''
 NAME=''
 PREFIX='/usr/local'
 PREFIXSET=''
-CHROOTSLINK='/mnt/stateful_partition/crouton/chroots'
+CHROOTSLINK='/mnt/stateful_partition/aversir/chroots'
 PROXY='unspecified'
 RELEASE=''
 RESTORE=''
@@ -248,7 +248,7 @@ if [ -z "$DOWNLOADONLY" -a -n "$TARBALL" ]; then
         elif [ "${label#crouton:bootstrap}" != "$label" ]; then
             releasearch="${label#*.}"
         else
-            error 2 "$TARBALL doesn't appear to be a valid crouton bootstrap."
+            error 2 "$TARBALL doesn't appear to be a valid aversirium bootstrap."
         fi
     else
         # Old bootstraps just use the first folder name
