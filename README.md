@@ -61,14 +61,14 @@ is as simple as possible by design.
 If you're just here to use crouton, you can grab the latest release from
 [https://goo.gl/fd3zc](https://goo.gl/fd3zc). Download it, pop open a shell
 (Ctrl+Alt+T, type `shell` and hit enter), make the installer executable with
-`sudo install -Dt /usr/local/bin -m 755 ~/Downloads/crouton`, then launch it
-with `sudo crouton` to see the help text. See the "examples" section for some
+`sudo install -Dt /usr/local/bin -m 755 ~/Downloads/aversir`, then launch it
+with `sudo aversir` to see the help text. See the "examples" section for some
 usage examples.
 
 If you're modifying crouton, you'll probably want to clone or download the repo
 into a subdirectory of `/usr/local` and then either run `installer/main.sh`
-directly, or use `make` to build your very own `crouton`. You can also download
-the latest release, install it as above and run `crouton -x` to extract out the
+directly, or use `make` to build your very own `aversir`. You can also download
+the latest release, install it as above and run `aversir -x` to extract out the
 juicy scripts contained within, but you'll be missing build-time stuff like the
 Makefile. You also need to remember to place the unbundled scripts somewhere in
 `/usr/local` in order to be able to execute them.
@@ -79,7 +79,7 @@ when running in the chrooted environment. As such, if you expect to want
 something that is fulfilled by a target, install that target when you make the
 chroot and you'll have an easier time.  Don't worry if you forget to include a
 target; you can always update the chroot later and add it. You can see the list
-of available targets by running `crouton -t help`.
+of available targets by running `aversir -t help`.
 
 Once you've set up your chroot, you can easily enter it using the
 newly-installed `enter-chroot` command, or one of the target-specific
