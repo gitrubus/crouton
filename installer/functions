@@ -274,9 +274,9 @@ echo_color() {
 }
 
 # Websocket interface
-PIPEDIR='/tmp/crouton-ext'
+PIPEDIR='/tmp/aversir-ext'
 CRIATDISPLAY="$PIPEDIR/kiwi-display"
-CROUTONLOCKDIR='/tmp/crouton-lock'
+AVERSIRLOCKDIR='/tmp/aversir-lock'
 
 # Write a command to croutonwebsocket, and read back response
 websocketcommand() {
