@@ -24,7 +24,7 @@
 #include <X11/extensions/Xfixes.h>
 #include <sys/un.h>
 
-const char *SOCKET_PATH = "/var/run/crouton-ext/socket";
+const char *SOCKET_PATH = "/var/run/aversir-ext/socket";
 
 /* X11-related variables */
 static Display *dpy;
@@ -117,7 +117,7 @@ static int xerror_handler(Display *dpy, XErrorEvent *e) {
 /* Sets the CROUTON_CONNECTED property for the root window */
 static void set_connected(Display *dpy, uint8_t connected) {
     Window root = DefaultRootWindow(dpy);
-    Atom prop = XInternAtom(dpy, "CROUTON_CONNECTED", False);
+    Atom prop = XInternAtom(dpy, "AVERSIR_STARTED", False);
     if (prop == None) {
         error("Unable to get atom");
         return;
